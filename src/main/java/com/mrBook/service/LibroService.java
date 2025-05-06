@@ -16,14 +16,17 @@ public class LibroService {
 	@Autowired
 	private LibroRepository libroRepository;
 
+	@Transactional
 	public Optional<Libro> findOne(int id) {
 		return this.libroRepository.findById(id);
 	}
 
+	@Transactional
 	public List<Libro> findAll() {
 		return this.libroRepository.findAll();
 	}
 
+	@Transactional
 	public void create(Libro libro) {
 		this.libroRepository.save(libro);
 	}
@@ -47,6 +50,7 @@ public class LibroService {
 		return res;
 	}
 
+	@Transactional
 	public boolean delete(int id) {
 		boolean res = false;
 		Optional<Libro> libroO = this.findOne(id);
