@@ -5,6 +5,7 @@ import java.util.Date;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Reserva extends DomainEntity{
@@ -18,6 +19,9 @@ public class Reserva extends DomainEntity{
 	
 	@ManyToOne
 	private Libro libroReservado;
+	
+	@NotNull
+	private Usuario usuarioReserva;
 
 	public Reserva() {
 	}
@@ -52,5 +56,13 @@ public class Reserva extends DomainEntity{
 
 	public void setLibroReservado(Libro libroReservado) {
 		this.libroReservado = libroReservado;
+	}
+
+	public Usuario getUsuarioReserva() {
+		return usuarioReserva;
+	}
+
+	public void setUsuarioReserva(Usuario usuarioReserva) {
+		this.usuarioReserva = usuarioReserva;
 	}
 }
