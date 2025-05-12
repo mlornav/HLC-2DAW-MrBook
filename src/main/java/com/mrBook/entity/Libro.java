@@ -15,7 +15,6 @@ public class Libro extends DomainEntity{
 	@NotBlank
 	private String autor;
 	
-	@NotBlank
 	private Genero genero;
 	
 	@Min(1)
